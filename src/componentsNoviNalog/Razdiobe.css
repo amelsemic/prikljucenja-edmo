@@ -1,0 +1,11 @@
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="number"] {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 100px;
+  }

@@ -1,0 +1,38 @@
+.topRow {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 7% 20% 20% 15% 10% 28%;
+  margin: 10px;
+  background-color: aqua;
+}
+.topRow div.title {
+  margin: 5px 20px; 
+  border: 2px solid red;
+  /* width: 297.4px; */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  /* color: white; */
+}
+.topRow div.title img {
+  max-height: 50%;
+  max-width: auto;
+  /*   background-color: white; */
+  color: aqua;
+}
+p.symbol {
+  cursor: pointer;
+}
+
+.text {
+  font-size: 18px;
+  font-family: "Arial";
+}
+
+/*  @font-face {
+    font-family: 'graphikMedium';
+    src: url('../../graphik-font/GraphikMedium.otf');
+  }
+   */

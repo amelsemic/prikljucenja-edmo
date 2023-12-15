@@ -1,0 +1,32 @@
+.wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 7% 20% 20% 15% 10% 28%;
+    margin: 4px;
+    background-color: rgb(68, 255, 0);
+}
+
+.wrapper div.field {
+    margin: 5px 20px; 
+  /*   border: 2px solid red; */
+    /* width: 297.4px; */
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 2px solid red; */
+  }
+   .wrapper div.field img {
+    max-height: 140%;
+    max-width: 100%;
+    color: aqua;
+  }
+  /*
+  p.symbol {
+    cursor: pointer;
+  } */
+  
+  .text {
+    font-size: 18px;
+    font-family: "Arial";
+  }

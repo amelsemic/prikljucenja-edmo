@@ -1,0 +1,5 @@
+
+
+napraviti loadanje naloga sa firebase  kao kod e-commerce project
+
+provjeriti zaasto neki keys se ne uploadaju na firebase (mozda value ne treba biti undefinied nego " " )
