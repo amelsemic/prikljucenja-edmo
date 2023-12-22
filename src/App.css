@@ -1,9 +1,13 @@
 .App {
   text-align: center;
+  justify-content: center;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-/*   width: 90vw;   */
+  align-items: center;
+  min-width: fit-content;
+  /* max-width: 90vw; */
+  border: 3px solid red;
 }

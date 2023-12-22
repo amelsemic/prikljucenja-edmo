@@ -1,50 +1,36 @@
 import React, { useState, useContext } from "react";
-import "./newConnectionForm.css";
+/* import "./newConnectionForm.css"; */
 import Razdioba3inputs from "./Razdioba3Inputs";
 import Razdioba2Inputs from "./Razdioba2Inputs";
 import PovecanjeSnage from "./PovecanjeSnage";
 import Prikljucak from "./Prikljucak";
 import { NaloziContext } from "../store/nalozi-context";
+import classes from "./newConnectionForm.module.css"
+const initialFormValue = {
+  name: "",
+  address: "",
+  vrstaNaloga: "prikljucak",
+  power: "",
+  powerPprev: "",
+  powerPnew: "",
+  powerR1: "",
+  powerR2: "",
+  powerR3: "",
+  date: "",
+  checkbox: false,
+  description: "",
+  zavrsen: false
+};
 
 const NewConnectionForm = () => {
-  const {dodajNalog} = useContext(NaloziContext)
+  const { dodajNalog } = useContext(NaloziContext);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    address: "",
-    vrstaNaloga: "prikljucak",
-    power: "",
-    powerPprev: undefined,
-    powerPnew: undefined,
-    powerR1: undefined,
-    powerR2: undefined,
-    powerR3: undefined,
-    date: undefined,
-    checkbox: false,
-    description: "",
-  });
+  const [formData, setFormData] = useState(initialFormValue);
 
   const handleChange = (e) => {
     const { name, checked, type, value } = e.target;
     const fieldValue = type === "checkbox" ? checked : value;
 
-    if(name == "date"){
-      console.log("e target:",e.target)
-      const inputDate = new Date(e.target.value);
-  
-      const day = inputDate.getDate().toString().padStart(2, '0');
-      const month = (inputDate.getMonth() + 1).toString().padStart(2, '0');
-      const year = inputDate.getFullYear();
-    
-      const formattedDateString = `${day}/${month}/${year}`;
-  
-      const proba = new Date(formattedDateString)
-
-      console.log("prva verzija datuma:", e.target.value)
-      console.log("formatted string:", formattedDateString)
-      console.log("proba ", proba)
-    }
-    
     setFormData((prevFormData) => ({
       ...prevFormData,
       description:
@@ -55,37 +41,20 @@ const NewConnectionForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dodajNalog(formData)
+    dodajNalog(formData);
 
-    /* 
-    
-    // kod prikazivanja datuma:
-    
-    console.log("e target name:",e.target.name)
-    const inputDate = new Date(e.target.value);
-
-    const day = inputDate.getDate().toString().padStart(2, '0');
-    const month = (inputDate.getMonth() + 1).toString().padStart(2, '0');
-    const year = inputDate.getFullYear();
-  
-    const formattedDateString = `${day}/${month}/${year}`;
-
-    const proba = new Date(formattedDateString)
- */
-    console.log("form data:", formData)
-
-    const noviDatum = new Date(formData.date)
-    console.log(noviDatum.getFullYear())
+    //pocistiti inpute
+    setFormData(initialFormValue)
   };
 
   return (
-    <form onSubmit={handleSubmit} className="my-form">
-      <div className="form-inputs">
+    <form onSubmit={handleSubmit} className={classes.myForm}>
+      <div className={classes.formInputs}>
         <input
           placeholder="Ime i prezime"
           type="text"
           name="name"
-          /* value={formData.name} */
+          value={formData.name}
           onChange={handleChange}
           required
         />
@@ -94,7 +63,7 @@ const NewConnectionForm = () => {
           placeholder="Adresa"
           type="text"
           name="address"
-          /* value={formData.address} */
+          value={formData.address}
           onChange={handleChange}
           required
         />
@@ -121,8 +90,8 @@ const NewConnectionForm = () => {
         {formData.vrstaNaloga === "razdioba3" && (
           <Razdioba3inputs formData={formData} onChange={handleChange} />
         )}
-        <input type="date" name="date" onChange={handleChange}  required/>
-        <label className="gradRad">
+        <input type="date" name="date" value={formData.date} onChange={handleChange} required />
+        <label className={classes.gradRad}>
           <input
             type="checkbox"
             name="checkbox"
