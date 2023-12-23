@@ -5,7 +5,7 @@ import Razdioba2Inputs from "./Razdioba2Inputs";
 import PovecanjeSnage from "./PovecanjeSnage";
 import Prikljucak from "./Prikljucak";
 import { NaloziContext } from "../store/nalozi-context";
-import classes from "./newConnectionForm.module.css"
+import classes from "./newConnectionForm.module.css";
 const initialFormValue = {
   name: "",
   address: "",
@@ -19,7 +19,7 @@ const initialFormValue = {
   date: "",
   checkbox: false,
   description: "",
-  zavrsen: false
+  zavrsen: false,
 };
 
 const NewConnectionForm = () => {
@@ -44,7 +44,7 @@ const NewConnectionForm = () => {
     dodajNalog(formData);
 
     //pocistiti inpute
-    setFormData(initialFormValue)
+    setFormData(initialFormValue);
   };
 
   return (
@@ -90,7 +90,13 @@ const NewConnectionForm = () => {
         {formData.vrstaNaloga === "razdioba3" && (
           <Razdioba3inputs formData={formData} onChange={handleChange} />
         )}
-        <input type="date" name="date" value={formData.date} onChange={handleChange} required />
+        <input
+          type="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+          required
+        />
         <label className={classes.gradRad}>
           <input
             type="checkbox"
@@ -100,7 +106,7 @@ const NewConnectionForm = () => {
           />
           <p>Građevinski radovi</p>
         </label>
-        {formData.checkbox && (
+        {
           <textarea
             name="description"
             value={formData.description}
@@ -109,7 +115,7 @@ const NewConnectionForm = () => {
             placeholder="Kratak opis radova..."
             required={formData.checkbox}
           />
-        )}
+        }
       </div>
 
       <button type="submit">Unesi </button>

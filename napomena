@@ -4,7 +4,6 @@ napraviti loadanje naloga sa firebase  kao kod e-commerce project
 
 provjeriti zaasto neki keys se ne uploadaju na firebase (mozda value ne treba biti undefinied nego " " )
 
-
 dodati update naloga na screenu nakon dodavanja novog
 
 isprazniti inpute kad se unese novi nalog
@@ -15,10 +14,19 @@ izbaciti button van grad radova, uvesti zavrsavanje na klik  & refresh popisa za
 
 dodati premjestanje na dno liste
 
-
-
 dodati da su zavrseni sortirani po mjesecima
-na button prikazati i skloniti formu za unos
 
 umjesto građ.radovi ubaciti kolonu OPIS, al ostaviti check box i oznaku G na popisu ako ima građevine
-kad se nalog zavrsi dodati datum zavrsetka ?? mozda
+
+
+
+nalozi stariji od 30 dana treba da budu crveni
+dodati title GODINA za zavrsene naloge
+freezati Naslove i "Završeni nalozi" kad se scrolla
+
+
+
+na button prikazati i skloniti formu za unos
+
+firebase endpoint premjestiti u file koji se ne upload-a na github
+kad se nalog zavrsi dodati datum zavrsetka ??

@@ -36,9 +36,9 @@ export const  compareByDate = (a, b) => {
   
     eventsArray.forEach((event) => {
       const eventDate = new Date(event.date);
-      const monthKey = `${eventDate.getFullYear()}-${(eventDate.getMonth() + 1)
+      const monthKey = `${(eventDate.getMonth() + 1)
         .toString()
-        .padStart(2, '0')}`;
+        .padStart(2, '0')}-${eventDate.getFullYear()}`;
   
       if (!eventsByMonth[monthKey]) {
         eventsByMonth[monthKey] = [];

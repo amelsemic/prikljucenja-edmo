@@ -1,46 +1,53 @@
 .wrapper {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 6.65% 19% 19% 14.25% 9.5% 26.6% 5%;
-    margin: 4px 0px;
-    background-color: rgb(68, 255, 0);
-    border: 2px solid red;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 6.65% 15% 15% 14.25% 9.5% 33.6% 6%;
+  margin: 4px 0px;
+  background-color: rgb(68, 255, 0);
+  /* border: 2px solid red; */
+  position: relative;
 }
 
 .wrapper div.field {
-    margin: 5px 20px; 
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border: 2px solid red;
-  /*   position: relative; */
-  }
-   .wrapper div.field img {
-    max-height: 140%;
-    max-width: 100%;
-    color: aqua;
-  }
+  margin: 5px 10px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: 2px solid red; */
 
-  .zavrsiButton {
-    /* background-color: rgba(165, 42, 42, 0.403); */
-    margin: 0;
-    padding: 5px;
-    border-radius: 100%;
-    cursor: pointer;
+}
+.wrapper div.field img {
+  max-height: 140%;
+  max-width: 100%;
+  color: aqua;
+}
 
-  }
-  .zavrsiButton:hover {
-    background-color: aqua;
-  }
-  /*
+.zavrsiButton {
+  /* background-color: rgba(165, 42, 42, 0.403); */
+  margin: 0;
+  padding: 5px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.zavrsiButton:hover {
+  background-color: aqua;
+}
+.excv {
+  position: absolute;
+  left: 62.5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%;
+}
+/*
   p.symbol {
     cursor: pointer;
   } */
-  
-  .text {
-    font-size: 18px;
-    font-family: "Arial";
-    text-align: center;
-    width: 100%;
-  }
+
+.text {
+  font-size: 18px;
+  font-family: "Arial";
+  text-align: center;
+  width: 90%;
+}

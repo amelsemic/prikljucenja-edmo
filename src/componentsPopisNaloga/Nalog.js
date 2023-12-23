@@ -1,5 +1,6 @@
 import classes from "./Nalog.module.css";
 import ImgIcon from "../imgs/ImgIcon";
+import excavator from "../imgs/excavator.png"
 import { snagaText, dateFormatter } from "../store/auxFunctions";
 
 const Nalog = (props) => {
@@ -24,11 +25,12 @@ const Nalog = (props) => {
         <p className={classes.text}> {formatiranDatum} </p>
       </div>
       <div className={classes.field}>
-        <p className={classes.text}> {props.data.description || "X"} </p>
+        <p className={classes.text}> {props.data.description || "/"} </p>
       </div>
       {props.onFinish && <div className={classes.field}>
         <button className={classes.zavrsiButton} onClick={()=> props.onFinish(props.data.id)} >Završi</button>
       </div>}
+      {props.data.checkbox && <img className={classes.excv} src={excavator} />}
     </div>
   );
 };

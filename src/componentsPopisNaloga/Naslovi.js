@@ -19,7 +19,10 @@ const Naslovi = () => {
         <p className={classes.text}>DATUM NALOGA </p>
       </div>
       <div className={classes.title}>
-        <p className={classes.text}>GRAĐEVINSKI RADOVI </p>
+        <p className={classes.text}>OPIS RADOVA</p>
+      </div>
+      <div className={classes.title}>
+        <p className={classes.text}>ZAVRŠEN?</p>
       </div>
     </div>
   );
