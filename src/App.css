@@ -8,6 +8,4 @@
   flex-direction: column;
   align-items: center;
   min-width: fit-content;
-  /* max-width: 90vw; */
-  border: 3px solid red;
 }

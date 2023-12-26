@@ -3,7 +3,24 @@
     width: 100%;
     text-align: center;
 }
+.month{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.wrapper h1 {
+    border: 2px blue solid;
+    border-radius: 10px;
+    padding: 10px;
+    position: sticky;
+    top: 60px;
+    z-index: 2;
+    background-color: white;
+}
 
 .wrapper h2  {
-    color: blueviolet;
+    padding: 0 10px;
+    color: rgb(43, 55, 226);
+    width: max-content;
+    background-color: rgba(128, 128, 128, 0.468)
 }

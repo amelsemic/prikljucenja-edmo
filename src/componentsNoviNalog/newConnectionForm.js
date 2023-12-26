@@ -20,6 +20,8 @@ const initialFormValue = {
   checkbox: false,
   description: "",
   zavrsen: false,
+  //novo
+  datumZavrsetka: ""
 };
 
 const NewConnectionForm = () => {
@@ -57,6 +59,7 @@ const NewConnectionForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
+          maxLength="25"
         />
 
         <input
@@ -66,6 +69,7 @@ const NewConnectionForm = () => {
           value={formData.address}
           onChange={handleChange}
           required
+          maxLength="30"
         />
 
         <select name="vrstaNaloga" id="vrstaNaloga" onChange={handleChange}>
@@ -114,6 +118,7 @@ const NewConnectionForm = () => {
             rows={2}
             placeholder="Kratak opis radova..."
             required={formData.checkbox}
+            maxLength="80"
           />
         }
       </div>

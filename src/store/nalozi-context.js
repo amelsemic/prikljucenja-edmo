@@ -5,14 +5,14 @@ import { compareByDate } from "./auxFunctions";
 const NaloziContext = React.createContext();
 
 const NaloziProvider = (props) => {
-  const firebaseEndpoint =
-    "https://prikljucenja-edmo-default-rtdb.asia-southeast1.firebasedatabase.app/nalozi.json";
+  const firebaseEndpoint = process.env.REACT_APP_FIREBASE_ENDPOINT;
   const [nalozi, setNalozi] = useState([]);
   const [osvjeziNaloge, setOsvjeziNaloge] = useState(false);
 
   //zavrseni i nezavrseni nalozi
   const [zavrseniNalozi, setZavrseniNalozi] = useState([]);
   const [nezavrseniNalozi, setNezavrseniNalozi] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   //povlacenje spiska naloga sa API...
   useEffect(() => {
@@ -51,15 +51,17 @@ const NaloziProvider = (props) => {
     setOsvjeziNaloge((prev) => !prev);
   };
 
-  const zavrsiNalog = async (id) => {
+  //zavrsiNalog treba primat i date pored ID
+  const zavrsiNalog = async (id, datumZavrsetka) => {
     const index = nalozi.findIndex((nal) => nal.id === id);
-    
 
-     if(index!==-1){ 
-      const azuriraniNalozi = nalozi.filter((nal) => nal.id != id);
-      const azuriranNalog = { ...nalozi[index], zavrsen: true };
+    setShowModal(true);
+
+    if (index !== -1) {
+      const azuriraniNalozi = nalozi.filter((nal) => nal.id !== id);
+      const azuriranNalog = { ...nalozi[index], zavrsen: true, datumZavrsetka };
       azuriraniNalozi.push(azuriranNalog);
-      try{
+      try {
         const updateResponse = await fetch(firebaseEndpoint, {
           method: "PUT",
           headers: {
@@ -67,16 +69,16 @@ const NaloziProvider = (props) => {
           },
           body: JSON.stringify(azuriraniNalozi),
         });
-        console.log(updateResponse)
+        console.log(updateResponse);
         if (!updateResponse.ok) {
-          throw new Error('Failed to update object in Firebase');
+          throw new Error("Failed to update object in Firebase");
         }
-        console.log('Object updated successfully');
-      } catch(err){
-        console.error('Error updating object:', err);
-      } 
-    } else console.error('Object not found in the array');
-  
+        console.log("Object updated successfully");
+      } catch (err) {
+        console.error("Error updating object:", err);
+      }
+    } else console.error("Object not found in the array");
+
     setOsvjeziNaloge((prev) => !prev);
   };
 
@@ -86,6 +88,8 @@ const NaloziProvider = (props) => {
     nezavrseniNalozi,
     dodajNalog,
     zavrsiNalog,
+    showModal,
+    setShowModal,
   };
 
   return (

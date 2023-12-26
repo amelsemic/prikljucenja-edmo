@@ -18,15 +18,21 @@ dodati da su zavrseni sortirani po mjesecima
 
 umjesto građ.radovi ubaciti kolonu OPIS, al ostaviti check box i oznaku G na popisu ako ima građevine
 
-
-
 nalozi stariji od 30 dana treba da budu crveni
-dodati title GODINA za zavrsene naloge
-freezati Naslove i "Završeni nalozi" kad se scrolla
+dodati title GODINA za zavrsene naloge - nema potrebe jer je u title-u vec godina
+
+na klik na "Zavrsi" otvoriti modal za unos datuma zavrsetka (mora se u naloge dodat jos jedan key "datumZavrsetka")
+freezati "Završeni nalozi" kad se scrolla
+
+dodati maximalan broj slvoa u inpute
 
 
+
+pushati sve na github & deployati
 
 na button prikazati i skloniti formu za unos
 
 firebase endpoint premjestiti u file koji se ne upload-a na github
 kad se nalog zavrsi dodati datum zavrsetka ??
+
+bug: kad se brise iz baze mora se dodat novi nalog kroz formu da bi opet stranica radila ok

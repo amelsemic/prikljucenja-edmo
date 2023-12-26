@@ -1,10 +1,13 @@
 .topRow {
   width: 100%;
   display: grid;
-  grid-template-columns: 6.65% 15% 15% 14.25% 9.5% 33.6% 6%;;
+  grid-template-columns: 6% 15% 15% 12% 9.5% 33.5% 8.5%;
   margin: 10px 0px;
-  background-color: aqua;
+  background-color: rgb(89, 121, 218);
   align-self: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 .topRow div.title {
   margin: 5px 10px; 
@@ -30,4 +33,5 @@ p.symbol {
 .text {
   font-size: 18px;
   font-family: "Arial";
+  font-weight: bold;
 }

@@ -49,3 +49,18 @@ export const  compareByDate = (a, b) => {
   
     return eventsByMonth;
   };
+
+
+  export const olderThan30Days = (dateString) => {
+    const currentDate = new Date();
+    const inputDate = new Date(dateString);
+  
+    // Calculate the difference in milliseconds
+    const differenceInMilliseconds = currentDate - inputDate;
+  
+    // Calculate the difference in days
+    const differenceInDays = differenceInMilliseconds / (1000 * 60 * 60 * 24);
+  
+    // Check if the difference is greater than 30 days
+    return differenceInDays > 30;
+  };

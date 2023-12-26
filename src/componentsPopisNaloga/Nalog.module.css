@@ -1,10 +1,17 @@
 .wrapper {
   width: 100%;
   display: grid;
-  grid-template-columns: 6.65% 15% 15% 14.25% 9.5% 33.6% 6%;
+  grid-template-columns: 6% 15% 15% 12% 9.5% 33.5% 8.5%;
   margin: 4px 0px;
-  background-color: rgb(68, 255, 0);
-  /* border: 2px solid red; */
+  position: relative;
+}
+
+.oldDate {
+  background-color: rgba(255, 0, 0, 0.548);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 6% 15% 15% 12% 9.5% 33.5% 8.5%;
+  margin: 4px 0px;
   position: relative;
 }
 
@@ -14,8 +21,19 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* border: 2px solid red; */
-
+}
+.oldDate div.field {
+  margin: 5px 10px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+ 
+}
+.oldDate div.field img {
+  max-height: 140%;
+  max-width: 100%;
+  color: aqua;
 }
 .wrapper div.field img {
   max-height: 140%;
@@ -24,7 +42,6 @@
 }
 
 .zavrsiButton {
-  /* background-color: rgba(165, 42, 42, 0.403); */
   margin: 0;
   padding: 5px;
   border-radius: 100%;
@@ -35,19 +52,15 @@
 }
 .excv {
   position: absolute;
-  left: 62.5%;
+  left: 61%;
   top: 50%;
   transform: translate(-50%, -50%);
   height: 90%;
 }
-/*
-  p.symbol {
-    cursor: pointer;
-  } */
 
 .text {
   font-size: 18px;
   font-family: "Arial";
   text-align: center;
-  width: 90%;
+  width: 80%;
 }

@@ -9,7 +9,7 @@ const PopisZavrNaloga = (props) => {
     <div className={classes.wrapper}>
       <h1>Završeni nalozi</h1>
       {mjeseci.map((mj) => (
-        <div key={mj}>
+        <div className={classes.month} key={mj}>
           <h2>{mj}</h2>
           {naloziRazvrPoMjesecima[`${mj}`].map((nal) => (
             <Nalog key={nal.id} data={nal} />
