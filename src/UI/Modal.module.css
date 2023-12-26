@@ -37,7 +37,7 @@
 }
 .modal input{
   cursor: pointer;
-  width: 50%;
+  min-width: 50%;
 }
 .content {
   display: flex;
