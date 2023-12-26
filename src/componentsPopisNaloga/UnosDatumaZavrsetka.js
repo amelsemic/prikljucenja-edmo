@@ -23,6 +23,7 @@ const UnosDatumaZavrsetka = (props) => {
 
   return (
     <Modal onClose={props.onClose}>
+      <text>Datum <br/>završetka<br/> naloga </text>
       <input type="date" value={datumZavrsetka} onChange={handleChange} />
       <button
         disabled={datumZavrsetka === ""}

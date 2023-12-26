@@ -10,12 +10,12 @@
 
 .modal {
   position: fixed;
-  left: 40%;
+  left: 35%;
   top: 40%;
   /* ne radi ? */
   transform: translate(-50%, -50%);
-  width: 20%;
-  height: 20%;
+  width: 30%;
+  height: 15%;
   background-color: white;
   padding: 1rem;
   border-radius: 14px;
@@ -23,13 +23,21 @@
   z-index: 30;
   animation: slide-down 300ms ease-out forwards;
   display: flex;
+  justify-content: space-around;
   align-items: center;
+}
+.modal text{
+  align-self: center;
 }
 .modal button{
   cursor: pointer;
 }
 .modal button:disabled {
   cursor: not-allowed;
+}
+.modal input{
+  cursor: pointer;
+  width: 50%;
 }
 .content {
   display: flex;
