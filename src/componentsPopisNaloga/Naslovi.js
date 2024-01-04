@@ -16,7 +16,7 @@ const Naslovi = () => {
         <p className={classes.text}>SNAGA (kW)</p>
       </div>
       <div className={classes.title}>
-        <p className={classes.text}>DATUM NALOGA </p>
+        <p className={classes.text}>DATUM ZAHTJEVA </p>
       </div>
       <div className={classes.title}>
         <p className={classes.text}>OPIS RADOVA</p>
