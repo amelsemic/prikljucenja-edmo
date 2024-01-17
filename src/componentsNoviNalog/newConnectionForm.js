@@ -77,6 +77,7 @@ const NewConnectionForm = () => {
           <option value="povecanje">Povećanje snage </option>
           <option value="razdioba2">Razdioba na 2 MM </option>
           <option value="razdioba3">Razdioba na 3 MM</option>
+          <option value="izmjestanje">Izmještanje EE objekta</option>
         </select>
 
         {formData.vrstaNaloga === "prikljucak" && (

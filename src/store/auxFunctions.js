@@ -1,6 +1,6 @@
 
 export const snagaText = (nalogData) => {
-    let returnedText = "";
+    let returnedText = "/";
     if(nalogData.vrstaNaloga === "povecanje") returnedText = nalogData.powerPprev + " => " + nalogData.powerPnew;
     if(nalogData.vrstaNaloga === "prikljucak") returnedText = nalogData.power;
     if(nalogData.vrstaNaloga === "razdioba2") returnedText = nalogData.powerPprev + " => " + nalogData.powerR1 + " + " + nalogData.powerR2;
